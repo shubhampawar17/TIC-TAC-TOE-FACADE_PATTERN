@@ -40,12 +40,9 @@ namespace TIC_TAC_TOE_FACADE_PATTERN.Presentation
                     Console.ReadKey();
                     continue;
                 }
-
-                movesCount++;
-
                 if (GameFacade.IsGameOver(movesCount))
                 {
-                    //Console.Clear();
+                    Console.Clear();
                     DisplayBoard();
 
                     if (GameFacade.CheckWin())
@@ -58,7 +55,7 @@ namespace TIC_TAC_TOE_FACADE_PATTERN.Presentation
                     }
                     break;
                 }
-
+                movesCount++;
                 GameFacade.SwitchPlayer();
             }
         }

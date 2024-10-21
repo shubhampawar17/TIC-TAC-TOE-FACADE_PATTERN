@@ -43,8 +43,12 @@ namespace TIC_TAC_TOE_FACADE_PATTERN.Service
 
             public static bool IsGameOver(int movesCount)
             {
-                return CheckWin() || ResultAnalyzer.CheckDraw(movesCount);
+            if (CheckWin())
+            {
+                return true;  
             }
+            return ResultAnalyzer.CheckDraw(movesCount);
+        }
 
             public static void SwitchPlayer()
             {

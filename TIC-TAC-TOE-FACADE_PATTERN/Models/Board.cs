@@ -26,7 +26,21 @@ namespace TIC_TAC_TOE_FACADE_PATTERN.Models
 
         public void UpdateBoard(int position, MarkType symbol)
         {
-            positions[position - 1] = (char)symbol;
+            positions[position - 1] = MarkTypeToChar(symbol);  // Use the helper method to update the board with 'X' or 'O'
+        }
+
+        // Helper method to convert MarkType to char
+        private char MarkTypeToChar(MarkType symbol)
+        {
+            switch (symbol)
+            {
+                case MarkType.X:
+                    return 'X';
+                case MarkType.O:
+                    return 'O';
+                default:
+                    return ' ';  // For EMPTY
+            }
         }
 
         public bool CheckWin(char symbol)
